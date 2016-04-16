@@ -133,13 +133,6 @@ exitWithMessageOnError "installing flatten-packages failed"
 node ./node_modules/flatten-packages/bin/flatten .
 exitWithMessageOnError "flatten-packages failed"
 
-# 4. Run grunt
-if [ -e "$DEPLOYMENT_SOURCE/Gruntfile.js" ]; then
-  eval $NPM_CMD install grunt-cli
-  exitWithMessageOnError "installing grunt failed"
-  ./node_modules/.bin/grunt --no-color prod
-  exitWithMessageOnError "grunt failed"
-fi
 
 echo ##########
 echo SYNCING
